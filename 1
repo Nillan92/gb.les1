@@ -1,0 +1,103 @@
+package geekbrains.lesson;
+
+public class Main {
+
+    static int equation(int a, int b, int c, int d) {
+        return  a * ( b + c / d);
+    }
+
+    static void printResSum10_20(boolean result, double a, double b ) {
+        if (result) {
+            System.out.println("Сумма чисел "+a+" и "+b+" входит в интевал (10;20]");
+        }else {
+            System.out.println("Сумма чисел "+a+" и "+b+" не входит в интевал (10;20]");
+        }
+    }
+    static boolean checkSum10_20(double a, double b) {
+        return (a+b) > 10 && (a+b) <= 20.00 ? true: false;
+    }
+
+    static void printCheckSingNum( int a) {
+        System.out.println("Число "+a+" "+ (a >= 0 ? "положительное":"отрицательное")+".");
+    }
+
+    static boolean checkSingNum( double a) {
+        if (10*a % 10  == 0) {
+            return true;
+        }
+        return false;
+    }
+
+    static  void  prChSingNum(boolean result, double a){
+        System.out.println("Число "+a+" "+(result == true ? "целое":"дробное")+" ("+result+")." );
+    }
+
+    static  void  prHello(String name){
+        if (name.trim().length() == 0){
+            System.out.println("Привет, Аноним");
+        }else{
+            System.out.println("Привет, "+name.trim());
+        }
+    }
+    static void checkYear(int Year){
+        if (Year % 400 == 0){
+            System.out.println("Год "+Year+" високосный.");
+        }else if (Year % 100 == 0){
+            System.out.println("Год "+Year+" не високосный.");
+        }else if (Year % 4 == 0){
+            System.out.println("Год "+Year+" високосный.");
+        }else{
+            System.out.println("Год "+Year+" не високосный.");
+        }
+
+    }
+    public static void main(String[] args) {
+        byte var1= 4;
+        short var2= 8;
+        int var3 = 16;
+        long var4 = 32;
+        float var5 = 100.50f;
+        double var6 = 1000.90d;
+        char var7= 'A';
+        boolean var8 = false;
+        System.out.println("Задание 3");
+        int a = 2;
+        int b = 4;
+        int c = 18;
+        int d = 9;
+        System.out.println(a + (b + (c/d)));
+        System.out.println("Задание 4");
+        printResSum10_20(checkSum10_20(7,7), 7, 7);
+        printResSum10_20(checkSum10_20(10,10.2), 10, 10.2);
+        printResSum10_20(checkSum10_20(5,4.45), 5, 4.45);
+        printResSum10_20(checkSum10_20(9,9), 9, 9);
+        System.out.println("Задание 5");
+        printCheckSingNum(-100);
+        printCheckSingNum(0);
+        printCheckSingNum(100);
+        printCheckSingNum(1500);
+        printCheckSingNum(-34562);
+        System.out.println("Задание 6");
+        prChSingNum(checkSingNum(10.45), 10.45);
+        prChSingNum(checkSingNum(100), 100);
+        prChSingNum(checkSingNum(0), 0);
+        prChSingNum(checkSingNum(1001.00), 1001.00);
+        prChSingNum(checkSingNum(-10.45), -10.45);
+        System.out.println("Задание 7");
+        prHello("");
+        prHello("Пётр");
+        prHello("Иван");
+        System.out.println("Задание 8");
+        checkYear(12);
+        checkYear(22);
+        checkYear(100);
+        checkYear(200);
+        checkYear(400);
+        checkYear(650);
+        checkYear(1992);
+        checkYear(2000);
+        checkYear(2003);
+        checkYear(2001);
+    }
+
+}
